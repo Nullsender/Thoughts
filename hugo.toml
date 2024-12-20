@@ -1,4 +1,4 @@
 theme = "hugo-cards"
-baseURL = 'https://example.org/'
+baseURL = 'https://nullsender.github.io/thoughts/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
