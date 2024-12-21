@@ -6,8 +6,15 @@
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Dec 2024 23:32:01 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 21 Dec 2024 12:14:07 +0100</lastBuildDate>
     <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 2 Blog Post</title>
+      <link>https://example.org/posts/day-2-blog-post/</link>
+      <pubDate>Sat, 21 Dec 2024 12:14:07 +0100</pubDate>
+      <guid>https://example.org/posts/day-2-blog-post/</guid>
+      <description>&lt;h2 id=&#34;centrality-in-r&#34;&gt;Centrality in R&lt;/h2&gt;&#xA;&lt;p&gt;Heterogeneity is an almost universal fenomena. Trying to model the world we make plenty of errors, and furthermore nature itself varies all the time.&#xA;Despite this measurements often has a tendency to cluster round some central values. It is adventageous to attempt to capture and quantify this central tendency.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-arithmetic-mean&#34;&gt;The arithmetic mean&lt;/h3&gt;&#xA;&lt;p&gt;The arithmetic mean refers to the most commen quantitative measure of central tendency. In fact it is so commen that most just refer to it as the mean. Say one have a vector&#xA;$y\in\mathbb{R^n}$ with $n$ reel entries, then the arithmetic mean denoted $\bar{y}$ is defined as follows&lt;/p&gt;</description>
+    </item>
     <item>
       <title>First Post</title>
       <link>https://example.org/posts/first-post/</link>

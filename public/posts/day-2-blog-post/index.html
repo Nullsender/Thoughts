@@ -51,30 +51,56 @@
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
           <header class="post-header post-header-base">
-            <h1 class="post-title" itemprop="name headline">First Post</h1>
+            <h1 class="post-title" itemprop="name headline">Day 2 Blog Post</h1>
             
-            <p class="post-meta"><time datetime='2024-12-20T23:32:01&#43;01:00' itemprop="datePublished">December 20, 2024</time></p>
+            <p class="post-meta"><time datetime='2024-12-21T12:14:07&#43;01:00' itemprop="datePublished">December 21, 2024</time></p>
             
                  
           </header>
 
           <div class="post-content" itemprop="articleBody">
-            <h1 id="my-greeting">My greeting</h1>
-<p>For the zero people reading this I bid you welcome. This is my humble attempt at making a small blog.</p>
-<p>I have now used my entire evening setting up a workflow such that I can easily write a blogpost. I am currently using Hugo and I am writing this text with GNU nano 8.2.</p>
-<p>My intentions for doing this is that I sometimes get interrested in things, think about them, read about them, and sudenly no more. The thoughts stop and when I think back it feels
-like something important has been erased. It is kind of strange, we get all these thoughts and the next moment they are gone. A lot of the thoughts I have had where unproductive and
-not worth reproducing or remembering. Maybe only the thoughts and actions worth remembering are remembered. Anyways I have for a long time wanted to create a space where I can write
-some of these thoughts down and here we are. Another thing is that I want to become a better writer and thinker and I do belive writing a lot will help me in this pursuit.</p>
-<p>The idea of documenting a life experience is very cool to me. Capturing the development and outlook on life througout life.</p>
-<p>I will now test how equations are displayed on the blog:</p>
+            <h2 id="centrality-in-r">Centrality in R</h2>
+<p>Heterogeneity is an almost universal fenomena. Trying to model the world we make plenty of errors, and furthermore nature itself varies all the time.
+Despite this measurements often has a tendency to cluster round some central values. It is adventageous to attempt to capture and quantify this central tendency.</p>
+<h3 id="the-arithmetic-mean">The arithmetic mean</h3>
+<p>The arithmetic mean refers to the most commen quantitative measure of central tendency. In fact it is so commen that most just refer to it as the mean. Say one have a vector
+$y\in\mathbb{R^n}$ with $n$ reel entries, then the arithmetic mean denoted $\bar{y}$ is defined as follows</p>
 <p>$$
-\frac{1}{\pi}\int_{-\pi}^{\pi}f^2(x)dx=\frac{1}{2}a_0^2+\sum_{n=1}^{\inf}\left(a_n^2+b_n^2\right).
+\bar{y}=\frac{\sum_{i=0}^n y_n}{n}.
 $$</p>
-<p>\begin{align*}
-1+2=5\frac{1}{2}
-\end{align*}</p>
-<p>$$33+333_2$$</p>
+<p>Using R one could define a function as follows</p>
+<p>arithmetic.mean &lt;- function(x)
+{
+sum(x)/lenth(x)
+}.</p>
+<p>Now the arithmetic mean is easily calculated e.g.</p>
+<p>data &lt;- c(29,5,1,6,99,2,4,5,6,1,2)</p>
+<p>arithmetic.mean(data)
+[1] 14.54545</p>
+<p>R also have the build in function mean() which also returns the arithmetic mean</p>
+<p>mean(data)
+[1] 14.54545</p>
+<p>A fault of the arithmetic mean is that it is quite sensitive to outliers.</p>
+<h3 id="the-median">The median</h3>
+<p>Another measure of central tendency is the median, which is the middle value of the ordered (smallest to largest) dataset or the 50th percentile. For a vector with an odd amount of entries there is an exact
+middle value which splits the set in two. Whereas for an even amount of entries there is not a single value splitting the dataset in two. In this case the medium will be defined as the arithmetic mean of
+the two middle values. Hence in R a function to calculate the mean can be constructed as follows</p>
+<p>med &lt;- function(x) {</p>
+<pre><code>if(length(x) %% 2) sort(x)[ceiling(length(x)/2)]
+else (sort(x)[length(x)/2] + sort(x)[length(x)/2 + 1])/2
+</code></pre>
+<p>}.</p>
+<p>Now the median can be calculated as follows</p>
+<p>med(data)
+[1] 5,</p>
+<p>also the build in function median() can be used</p>
+<p>median(data)
+[1] 5.</p>
+<h2 id="the-geometric-mean">The geometric mean</h2>
+<p>The geometric mean is the n&rsquo;th root of the product of the data.</p>
+<p>$$\hat{y}= \left(\Pi y\right)^{\frac{1}{n}}$$</p>
+<h2 id="the-harmonic-mean">The harmonic mean</h2>
+<p>&ndash;MORE TO COME&ndash;</p>
 
           </div>
 
@@ -86,8 +112,8 @@ $$</p>
     <div class="row">
             <ul class="pager">
              
-                    <li><a class="next" href="https://example.org/posts/day-2-blog-post/">&laquo; Day 2 Blog Post</a></li>
               
+                <li><a class="previous" href="https://example.org/posts/first-post/">First Post &raquo;</a></li>
               
             </ul>
     </div>
