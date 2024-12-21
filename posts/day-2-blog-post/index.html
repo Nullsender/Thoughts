@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+  <script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+  <body>
+
+    <header class="site-header">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://example.org/">My New Hugo Site</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://example.org/pages/about/">About</a></li>
+        <li><a href="https://example.org/pages/contact/">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a target="_blank" href="https://github.com/bul-ikana/hugo-cards">Project</a></li>
+            <li><a href="https://github.com/bul-ikana/hugo-cards.git">Download</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a target="_blank" href="https://themes.gohugo.io/">More Themes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+    <div class="container">
+      <div class="wrapper">
+        
+<div class="row main-body">
+<div class="col-md-8 post-wrapper">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+          <header class="post-header post-header-base">
+            <h1 class="post-title" itemprop="name headline">Day 2 Blog Post</h1>
+            
+            <p class="post-meta"><time datetime='2024-12-21T12:14:07&#43;01:00' itemprop="datePublished">December 21, 2024</time></p>
+            
+                 
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <h2 id="centrality-in-r">Centrality in R</h2>
+<p>Heterogeneity is an almost universal fenomena. Trying to model the world we make plenty of errors, and furthermore nature itself varies all the time.
+Despite this measurements often has a tendency to cluster round some central values. It is adventageous to attempt to capture and quantify this central tendency.</p>
+<h3 id="the-arithmetic-mean">The arithmetic mean</h3>
+<p>The arithmetic mean refers to the most commen quantitative measure of central tendency. In fact it is so commen that most just refer to it as the mean. Say one have a vector
+$y\in\mathbb{R^n}$ with $n$ reel entries, then the arithmetic mean denoted $\bar{y}$ is defined as follows</p>
+<p>$$
+\bar{y}=\frac{\sum_{i=0}^n y_n}{n}.
+$$</p>
+<p>Using R one could define a function as follows</p>
+<p>arithmetic.mean &lt;- function(x)
+{
+sum(x)/lenth(x)
+}.</p>
+<p>Now the arithmetic mean is easily calculated e.g.</p>
+<p>data &lt;- c(29,5,1,6,99,2,4,5,6,1,2)</p>
+<p>arithmetic.mean(data)
+[1] 14.54545</p>
+<p>R also have the build in function mean() which also returns the arithmetic mean</p>
+<p>mean(data)
+[1] 14.54545</p>
+<p>A fault of the arithmetic mean is that it is quite sensitive to outliers.</p>
+<h3 id="the-median">The median</h3>
+<p>Another measure of central tendency is the median, which is the middle value of the ordered (smallest to largest) dataset or the 50th percentile. For a vector with an odd amount of entries there is an exact
+middle value which splits the set in two. Whereas for an even amount of entries there is not a single value splitting the dataset in two. In this case the medium will be defined as the arithmetic mean of
+the two middle values. Hence in R a function to calculate the mean can be constructed as follows</p>
+<p>med &lt;- function(x) {</p>
+<pre><code>if(length(x) %% 2) sort(x)[ceiling(length(x)/2)]
+else (sort(x)[length(x)/2] + sort(x)[length(x)/2 + 1])/2
+</code></pre>
+<p>}.</p>
+<p>Now the median can be calculated as follows</p>
+<p>med(data)
+[1] 5,</p>
+<p>also the build in function median() can be used</p>
+<p>median(data)
+[1] 5.</p>
+<h2 id="the-geometric-mean">The geometric mean</h2>
+<p>The geometric mean is the n&rsquo;th root of the product of the data.</p>
+<p>$$\hat{y}= \left(\Pi y\right)^{\frac{1}{n}}$$</p>
+<h2 id="the-harmonic-mean">The harmonic mean</h2>
+<p>&ndash;MORE TO COME&ndash;</p>
+
+          </div>
+
+    </article>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+            <ul class="pager">
+             
+              
+                <li><a class="previous" href="https://example.org/posts/first-post/">First Post &raquo;</a></li>
+              
+            </ul>
+    </div>
+</div>
+
+
+    <div class="col-md-4 mt20">
+        <div class="post-img">
+            
+            <img width="600" src="https://example.org/images/" alt="webjeda">
+            
+        </div>
+            
+        
+        <div class="mt10 recent">
+            <h2>Recent articles</h2>
+             <ul>
+                
+
+                      <li>
+                      <p><a href="https://example.org/posts/day-2-blog-post/">Day 2 Blog Post</a><small>&nbsp;&nbsp;December 21, 2024</small></p>
+                      </li>
+
+                
+
+                      <li>
+                      <p><a href="https://example.org/posts/first-post/">First Post</a><small>&nbsp;&nbsp;December 20, 2024</small></p>
+                      </li>
+
+                
+              </ul>
+        </div>
+        
+        <br>
+
+</div>
+
+
+</div>
+
+
+
+
+      </div>
+    </div>
+
+    <footer>
+    <div class="container">
+        <div class="row p20">
+            
+
+            <div class="col-md-4 text-center mt25" >
+                
+            </div>
+            <div class="col-md-4 text-center mt25">
+               
+               
+               
+               
+               
+            </div>
+
+        </div> 
+    </div>
+</footer>
+    
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://example.org/js/bootstrap.min.js"></script>
+  
+  </body>
+
+</html>
